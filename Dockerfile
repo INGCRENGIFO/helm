@@ -1,12 +1,12 @@
-FROM alpine:3.15
+FROM alpine:3.16
 
 ENV BASE_URL="https://get.helm.sh"
 
 ENV HELM_2_FILE="helm-v2.16.12-linux-amd64.tar.gz"
-ENV HELM_3_FILE="helm-v3.8.0-linux-amd64.tar.gz"
+ENV HELM_3_FILE="helm-v3.11.1-linux-amd64.tar.gz"
 
 RUN apk add --no-cache ca-certificates \
-    --repository http://dl-3.alpinelinux.org/alpine/edge/community/ \
+    # --repository http://dl-3.alpinelinux.org/alpine/edge/community/ \
     jq curl bash nodejs aws-cli && \
     apk add --no-cache aws-cli && \
     apk add --no-cache \
